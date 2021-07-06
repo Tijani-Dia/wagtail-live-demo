@@ -1,0 +1,275 @@
+:root {
+    --primary-color: teal;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../fonts/HKGrotesk-Bold.woff2') format('woff2'),
+      url('../fonts/HKGrotesk-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../fonts/HKGrotesk-Regular.woff2') format('woff2'),
+      url('../fonts/HKGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; 
+  font-family: 'HK Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: normal;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+  color: inherit;
+}
+
+li {
+	list-style-type: none;
+}
+
+h2 {
+	font-size: clamp(24px, 3.5vw, 36px);
+  margin: 1vh 0 2vh 0;
+	color: #2B2B2B;
+}
+
+img {
+	width: auto;
+	height: auto;
+}
+
+iframe {
+	width: auto;
+	height: auto;
+}
+
+.logo {
+  max-width: 90%;
+}
+
+/* ------- */
+
+
+/* Layout */
+
+header,
+.hero,
+main,
+footer {
+  display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 2vw;
+}
+
+/* ------ */
+
+
+/* Menu */
+
+menu {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+menu li {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+menu a {
+	color: inherit;
+	display: block;
+	font-size: clamp(10px, 1.5vw, 20px);
+	margin: auto;
+  margin-right: 2vw;
+}
+
+.active::after {
+  height: 4px;
+  display: block;
+  background: #FFFFFF;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 2vw;
+  opacity: 45%;
+}
+
+/* ----- */
+
+
+/* Header */
+
+header {
+	background-color: var(--primary-color);
+	padding: 0 2vw;
+	align-items: center;
+	color: #FFFFFF;
+}
+
+header .logo {
+  justify-self: center;
+  padding: 4px 0;
+  display: flex;
+}
+
+header menu {
+  padding-left: 3vw;
+}
+
+.search-bar {
+	justify-self: end;
+}
+
+/* ----- */
+
+
+/* Hero */
+
+.hero {
+	grid-template-rows: repeat(2, minmax(10vh, auto));
+}
+
+.hero-image {
+	grid-column: 1/-1;
+	grid-row: 1/-1;
+}
+
+.hero-text {
+	font-size: clamp(16px, 2vw, 30px);
+	color: #000000;
+	opacity: 60%;
+}
+
+.hero-body {
+	grid-column: 2/-2;
+	grid-row: 2;
+	background: #FFF;
+  padding: 2vh 4vw;
+}
+
+.hero-image > img {
+	object-fit: cover;
+}
+
+.”breadcrumb” {
+	font-size: clamp(11px, 1.4vw, 14px);
+	color: #555555;
+}
+
+/* -------- */
+
+
+/* Main */
+
+main {
+	margin-bottom: 8vh;
+}
+
+.content {
+  position: relative;
+}
+
+.posts {
+	padding: 2vh 2vw;
+}
+
+.live-post {
+	padding: 4vh 4vw;
+	border-top: 1px dashed #E8E8E8;
+}
+
+.live-post-meta {
+  display: flex;
+  justify-content: space-between;
+	color: #929292;
+	text-transform: uppercase;
+	font-size: clamp(11px, 1.2vw, 16px);
+  letter-spacing: -0.01em;
+}
+
+.live-post-content {
+	color: #555555;
+	font-size: clamp(14px, 1.5vw, 18px);
+	line-height: 1.5;
+	display: flex;
+	flex-direction: column;
+}
+
+.post-title {
+	font-size: clamp(24px, 2vw, 28px);
+	color: #222222;
+	font-weight: bold;
+	align-self: baseline;
+	margin: 1vh 0;
+	line-height: 1;
+}
+
+.post-block {
+	margin: 1vh 0;
+}
+
+/* -------- */
+
+
+/* Footer */
+
+footer::before {
+	content: "";
+	height: 1px;
+	width: 100%;
+	background: #000;
+	position: absolute;
+	opacity: 0.1;
+}
+
+footer {
+	padding: 1rem 0;
+	position: relative;
+}
+
+.copyright {
+	color: #000;
+	opacity: 50%;
+	display: block;
+	margin-top: 1rem;
+  grid-column: 1/-1;
+}
+
+.footer-links {
+	grid-column: 2/-2;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: start;
+	font-size: clamp(12px, 1.5vw, 16px);
+	line-height: 1.8;
+	color: #007C7F;
+}
+
+.footer-menu {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.footer-menu a {
+  margin: auto;
+}
+
+/** ------ */
